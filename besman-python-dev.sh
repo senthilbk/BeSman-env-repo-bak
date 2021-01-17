@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function __kobman_install_python-dev(){
+function __besman_install_python-dev(){
     python3 --version
     if [[ "$?" != "0" ]]; then
         echo "No python package found. Installing python3.7..."
@@ -19,8 +19,8 @@ function __kobman_install_python-dev(){
     python3 -m venv $HOME/python-dev
     create_test_script > $HOME/python-dev/test.py
     mkdir -p $HOME/python-dev/test
-    wget https://raw.githubusercontent.com/$KOBMAN_NAMESPACE/kobman-env-repo/master/test-kobman-python.sh
-    mv $HOME/test-kobman-python.sh $HOME/python-dev/test
+    wget https://raw.githubusercontent.com/$KOBMAN_NAMESPACE/besman-env-repo/master/test-besman-python.sh
+    mv $HOME/test-besman-python.sh $HOME/python-dev/test
     read -p "Do you want to install Visual Studio Code as your python IDE?[y/n]" ans
     if [[ $ans == "y" || $ans == "Y" ]]; then
         echo "Installing IDE for development"
@@ -44,14 +44,14 @@ print("Welcome " + username)
 EOF
 }
 
-function __kobman_uninstall_python-dev(){
+function __besman_uninstall_python-dev(){
 
     rm -rf $HOME/python-dev
     
 
 }
 
-function __kobman_validate_python
+function __besman_validate_python
 {
     python3 --version | grep -qi "python"
     if [[ "$?" != "0" ]]; then
@@ -68,15 +68,15 @@ function __kobman_validate_python
     fi
 }
 
-#__kobman_update_python(){
+#__besman_update_python(){
 
 #}
-#__kobman_upgrade_python(){
+#__besman_upgrade_python(){
 
 #}
-#__kobman_start_python(){
+#__besman_start_python(){
 
 #}
-#__kobman_stop_python(){
+#__besman_stop_python(){
 
 #}
