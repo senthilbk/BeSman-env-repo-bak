@@ -3,4 +3,5 @@
 function __besman_install_dummy
 {
     installed
+    echo "dummy installed"
 }
